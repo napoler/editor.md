@@ -227,7 +227,7 @@
 
                 function timelyFun(){
                     console.log("自动保存")
-                    var text = testEditor.getValue()
+                    var text = testEditor.getMarkdown()
                     window.localStorage.setItem("text", text)
  
                 }
