@@ -98,7 +98,7 @@
 
                 <textarea style="display:none;">
                     
-                    
+
  
                     </textarea>
 
@@ -147,12 +147,24 @@
                             //this.fullscreen();
                             //this.unwatch();
                             //this.watch().fullscreen();
+                            // var text = testEditor.getValue()
+                            var text= window.localStorage.getItem("text")
 
+                            this.setMarkdown(text);
                             //this.setMarkdown("#PHP");
                             //this.width("100%");
                             //this.height(480);
                             //this.resize("100%", 640);
-                        }
+                        },
+                        onchange: function () {
+          // text = TEditormd.getSelection()
+          //   console.log("自动保存")
+          //  console.log( this.getValue())
+          var text = this.getValue()
+          window.localStorage.setItem("text", text)
+ 
+
+        }
                     });
                 });
                 
