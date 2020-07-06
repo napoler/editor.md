@@ -160,6 +160,7 @@
           // text = TEditormd.getSelection()
           //   console.log("自动保存")
           //  console.log( this.getValue())
+
         //   var text = this.getValue()
         //   window.localStorage.setItem("text", text)
  
@@ -230,17 +231,33 @@
                     window.localStorage.setItem("text", text)
  
                 }
-                function funcTest(){
+            //     function funcTest(){
 
-                    //每隔3秒执行一次timelyFun方法
+            //         //每隔3秒执行一次timelyFun方法
 
-                    window.setInterval(timelyFun(),3000);
+            //         window.setInterval(timelyFun(),3000);
 
-                    }
+            //         }
 
-                            window.onload = funcTest;
+            //                 window.onload = funcTest;
+
+
+
+            //申明一个全局变量存放间隔函数
+            var setIntervalFun = null;
+            //每隔10秒钟执行一次setXSJYLTime()这个函数
+            setIntervalFun = setInterval("timelyFun()",1000*1);
+            //停止执行间隔函数
+            // if(setIntervalFun != null){
+            //     clearInterval(setIntervalFun);
+            // }
+
+
+
 
             });
+
+
         </script>
     </body>
 </html>
