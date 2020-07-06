@@ -160,8 +160,8 @@
           // text = TEditormd.getSelection()
           //   console.log("自动保存")
           //  console.log( this.getValue())
-          var text = this.getValue()
-          window.localStorage.setItem("text", text)
+        //   var text = this.getValue()
+        //   window.localStorage.setItem("text", text)
  
 
         }
@@ -222,6 +222,24 @@
                 $("#toc-default-btn").click(function() {
                     testEditor.config("tocDropdown", false);
                 });
+
+
+                function timelyFun(){
+                    console.log("自动保存")
+                    var text = testEditor.getValue()
+                    window.localStorage.setItem("text", text)
+ 
+                }
+                function funcTest(){
+
+                    //每隔3秒执行一次timelyFun方法
+
+                    window.setInterval(timelyFun(),3000);
+
+                    }
+
+                            window.onload = funcTest;
+
             });
         </script>
     </body>
