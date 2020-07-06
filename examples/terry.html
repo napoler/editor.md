@@ -108,7 +108,12 @@
         <script src="../editormd.js"></script>   
         <script type="text/javascript">
             var testEditor;
-            
+            function timelyFun(){
+                    console.log("自动保存")
+                    var text = testEditor.getMarkdown()
+                    window.localStorage.setItem("text", text)
+ 
+                }     
             $(function() {
                 
                 $.get('test.md', function(md){
@@ -225,12 +230,7 @@
                 });
 
 
-                function timelyFun(){
-                    console.log("自动保存")
-                    var text = testEditor.getMarkdown()
-                    window.localStorage.setItem("text", text)
- 
-                }
+        
             //     function funcTest(){
 
             //         //每隔3秒执行一次timelyFun方法
